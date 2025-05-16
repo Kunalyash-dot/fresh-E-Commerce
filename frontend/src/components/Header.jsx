@@ -21,7 +21,7 @@ function Header() {
     const cartItem = useSelector(state => state.cartItem.cart)
     const { totalPrice, totalQty } = useGlobalContext()
     const [openCartSection, setOpenCartSection] = useState(false)
-// console.log(user)
+// //console.log(user)
     const redirectToLoginPage = () => {
       navigate("/login")
   }

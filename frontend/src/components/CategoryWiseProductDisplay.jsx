@@ -20,7 +20,7 @@ function CategoryWiseProductDisplay({id,name}) {
     const fetchCategoryWiseProduct = async () => {
         try {
             setLoading(true)
-            // console.log(id)
+            // //console.log(id)
             const response = await Axios({
                 ...SummaryApi.getProductByCategory,
                 data: {
@@ -34,7 +34,7 @@ function CategoryWiseProductDisplay({id,name}) {
                 setData(responseData.data)
             }
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             AxiosToastError(error)
         } finally {
             setLoading(false)

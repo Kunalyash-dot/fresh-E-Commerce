@@ -15,7 +15,7 @@ function UploadSubCategoryModel({close, fetchData}) {
         category : []
     })
     const allCategory = useSelector(state => state.product.allCategory)
-    console.log(allCategory)
+    //console.log(allCategory)
     const handleChange = (e) => {
         const { name, value } = e.target;
         setSubCategoryData((prev) => ({
@@ -28,7 +28,7 @@ function UploadSubCategoryModel({close, fetchData}) {
         const file = e.target.files[0];
         if (!file) return;
         const response = await uploadImage(file);
-        console.log(response)
+        //console.log(response)
         if (response.status === 200) {
             setSubCategoryData((prev) => ({
                 ...prev,
@@ -48,8 +48,8 @@ function UploadSubCategoryModel({close, fetchData}) {
 
     const handleSubmitSubCategory = async (e) => {
         e.preventDefault();
-    //    console.log("pressed")
-    console.log(subCategoryData)
+    //    //console.log("pressed")
+    //console.log(subCategoryData)
         try {
           
             const response = await Axios({
@@ -61,7 +61,7 @@ function UploadSubCategoryModel({close, fetchData}) {
                 //     category: subCategoryData.category
                 // }
             });
-            console.log(response)
+            //console.log(response)
             if (response.data.success) {
                 toast.success("Sub Category added successfully");
                 fetchData();

@@ -23,15 +23,15 @@ function ProductAdmin() {
           search:search
         }
       })
-      // console.log(res)
+      // //console.log(res)
       const {data:responseData} = res;
-      // console.log(responseData)
+      // //console.log(responseData)
       if(responseData.success){
         setTotalPageCount(responseData.totalNoPage)
           setProductData(responseData.data)
       }
     } catch (error) {
-      console.log(error)
+      //console.log(error)
       AxiosToastError(error)
     }finally{
       setLoading(false)

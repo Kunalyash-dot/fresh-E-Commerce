@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import UserMenu from '../components/UserMenu'
 function Dashboard() {
     const user = useSelector((state) => state.user)
-    // console.log("user in dashboard", user);
+    // //console.log("user in dashboard", user);
   return (
    <section className="bg-white">
   <div className="container mx-auto p-3 grid lg:grid-cols-[250px_1fr]">

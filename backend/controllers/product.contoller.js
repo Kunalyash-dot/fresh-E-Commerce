@@ -79,7 +79,7 @@ export const getProductController = async (req, res) => {
        
         return res.status(200).json({ message: "Product fetched successfully", error: false, success: true, data, totalCount,totalNoPage:Math.ceil(totalCount/limit) });
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return res.status(500).json({ message: "Internal server error", error: true, success: false });
     }
 }
@@ -173,7 +173,7 @@ export const deleteProductDetailsController = async (req, res) => {
 export const searchProductController = async (req, res) => {
     try {
         let {search,page,limit} = req.body;
-         console.log(`search ${search}`)
+         //console.log(`search ${search}`)
         if(!search) {
             return res.status(400).json({ message: "Search term is required", error: true, success: false });
         }
@@ -196,7 +196,7 @@ export const searchProductController = async (req, res) => {
         }
         return res.status(200).json({ message: "Products fetched successfully", error: false, success: true, data, totalCount,page,limit,totalPage:Math.ceil(totalCount/limit) });
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return res.status(500).json({ message: "Internal server error", error: true, success: false });
     }
 }

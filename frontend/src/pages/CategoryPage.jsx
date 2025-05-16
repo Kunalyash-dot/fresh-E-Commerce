@@ -28,7 +28,7 @@ function CategoryPage() {
             const res = await Axios({
                 ...SummaryApi.getCategory
             })
-            console.log("category", res)
+            //console.log("category", res)
             if (res.status === 200) {
                 setCategoryData(res.data.data)
             }
@@ -44,7 +44,7 @@ function CategoryPage() {
 
     const handleDeleteCategory = async () => {
         try {
-            console.log(deleteCategory)
+            //console.log(deleteCategory)
             const res = await Axios({
                 ...SummaryApi.deleteCategory,
                 data: deleteCategory
@@ -58,7 +58,7 @@ function CategoryPage() {
             }
 
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             AxiosToastError(error)
         }
     }
@@ -69,9 +69,9 @@ function CategoryPage() {
             <div className='p-2   bg-white shadow-md flex items-center justify-between'>
                 <h2 className='font-semibold'>Category</h2>
                 <button onClick={() => {
-                    console.log(openUploadCategory);
+                    //console.log(openUploadCategory);
                     setOpenUploadCategory(true);
-                    console.log(openUploadCategory)
+                    //console.log(openUploadCategory)
                 }}
                     className='text-sm border border-green-200 hover:bg-green-200 px-3 py-1 rounded'>Add Category</button>
             </div>

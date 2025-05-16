@@ -21,7 +21,7 @@ function App() {
 
   const fetchUser = async()=>{
     const userData = await fetchUserDetails();
-    console.log(userData)
+    //console.log(userData)
     // if(!userData) return Navigate("/login")
     dispatch(setUserDetails(userData.data));
   }
@@ -31,7 +31,7 @@ function App() {
       dispatch(setLoadingCategory(true)); // Set loading to true
   
       const response = await Axios({ ...SummaryApi.getCategory });
-      console.log(response);
+      //console.log(response);
   
       const { data: responseData } = response;
   

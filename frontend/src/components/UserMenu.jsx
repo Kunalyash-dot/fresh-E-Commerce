@@ -23,7 +23,7 @@ const handleLogout = async () => {
       const res = await Axios({
         ...SummaryApi.logout,
       })
-      console.log('Logout response:', res);
+      //console.log('Logout response:', res);
       if(res.data.success){
         if(close){
           close()
@@ -34,7 +34,7 @@ const handleLogout = async () => {
         navigate("/")
       }
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       AxiosToastError(error)
     }
   }

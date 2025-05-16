@@ -26,17 +26,17 @@ function GlobalProvider({children}) {
     const response = await Axios({
       ...SummaryApi.getCartItem
     })
-    // console.log(response)
+    // //console.log(response)
     const { data : responseData } = response
-console.log(responseData);
+//console.log(responseData);
     if(responseData.success){
       dispatch(handleAddItemCart(responseData.data))
-      // console.log(responseData)
+      // //console.log(responseData)
     }
 
   } catch (error) {
     // AxiosToastError(error)
-    console.log(error)
+    //console.log(error)
   }
 }
 
@@ -63,7 +63,7 @@ const updateCartItem = async(id,qty)=>{
   }
 }
 const deleteCartItem = async(cartId)=>{
-console.log(cartId)
+//console.log(cartId)
   try {
       const response = await Axios({
         ...SummaryApi.deleteCartItem,
@@ -72,11 +72,11 @@ console.log(cartId)
         }
       })
       const { data : responseData} = response
-console.log(responseData)
+//console.log(responseData)
       if(responseData.success){
         toast.success(responseData.message)
         fetchCartItem()
-        console.log(cartItem)
+        //console.log(cartItem)
       }
   } catch (error) {
      AxiosToastError(error)
@@ -132,7 +132,7 @@ try {
       dispatch(setOrder(responseData.data))
   }
 } catch (error) {
-  console.log(error)
+  //console.log(error)
 }
 }
 

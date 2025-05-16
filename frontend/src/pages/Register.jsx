@@ -40,7 +40,7 @@ function Register() {
             ...SummaryApi.register,
             data: data
         })
-        console.log(res)
+        //console.log(res)
         if(res.data.error){
             toast.error(res.data.message)
             return

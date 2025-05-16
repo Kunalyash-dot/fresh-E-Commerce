@@ -24,7 +24,7 @@ function UploadCategoryModel({  fetchData, close }) {
             e.preventDefault();
             setLoading(true);
             try {
-                console.log(data)
+                //console.log(data)
                 const response = await Axios({
                     ...SummaryApi.addCategory,
                     data: {

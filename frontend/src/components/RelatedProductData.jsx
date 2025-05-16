@@ -7,7 +7,7 @@ import SummaryApi from '../common/SummaryApi';
 import scrollTop from '../utils/ScrollTop';
 
 function RelatedProductData({id,heading}) {
-    console.log(id)
+    //console.log(id)
      const [data, setData] = useState([])
         const [loading, setLoading] = useState(false)
      
@@ -15,7 +15,7 @@ function RelatedProductData({id,heading}) {
              const fetchCategoryWiseProduct = async () => {
         try {
             setLoading(true)
-            console.log(id)
+            //console.log(id)
             const response = await Axios({
                 ...SummaryApi.getProductByCategory,
                 data: {
@@ -24,12 +24,12 @@ function RelatedProductData({id,heading}) {
             })
 
             const { data: responseData } = response
-console.log(responseData)
+//console.log(responseData)
             if (responseData.success) {
                 setData(responseData.data)
             }
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             // AxiosToastError(error)
         } finally {
             setLoading(false)

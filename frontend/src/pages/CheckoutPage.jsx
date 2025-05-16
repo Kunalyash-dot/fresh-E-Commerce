@@ -31,7 +31,7 @@ function CheckoutPage() {
 
       const {data:responseData} = res;
 
-      console.log(responseData);
+      //console.log(responseData);
       if(responseData.success){
         toast.success(responseData.message)
         
@@ -69,7 +69,7 @@ function CheckoutPage() {
         totalAmt: totalPrice,
       },
     });
-    console.log(response)
+    //console.log(response)
   const { data: responseData } = response;
 
   // Step 2: Razorpay Options

@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 import AxiosToastError from '../utils/AxiosToasrError'
 
 function AddToCartButton({data}) {
-    // console.log(data)
+    // //console.log(data)
   const { fetchCartItem, updateCartItem, deleteCartItem } = useGlobalContext()
   const [loading, setLoading] = useState(false)
   const cartItem = useSelector(state => state.cartItem.cart)
@@ -17,7 +17,7 @@ function AddToCartButton({data}) {
   const [qty, setQty] = useState(0)
   const [cartItemDetails,setCartItemsDetails] = useState()
 
-//   console.log(cartItem)
+//   //console.log(cartItem)
   const handleADDTocart = async (e) => {
       e.preventDefault()
       e.stopPropagation()
@@ -52,10 +52,10 @@ function AddToCartButton({data}) {
   useEffect(() => {
       const checkingitem = cartItem.some(item => item.productId._id === data._id)
       setIsAvailableCart(checkingitem)
-// console.log(cartItem)
+// //console.log(cartItem)
       const product = cartItem.find(item => item.productId._id === data._id)
       setQty(product?.quantity)
-    //   console.log(product)
+    //   //console.log(product)
       setCartItemsDetails(product)
   }, [data, cartItem])
 
@@ -74,7 +74,7 @@ function AddToCartButton({data}) {
   const decreaseQty = async(e) => {
       e.preventDefault()
       e.stopPropagation()
-      console.log(qty)
+      //console.log(qty)
       if(qty === 1){
           deleteCartItem(cartItemDetails?._id);
         

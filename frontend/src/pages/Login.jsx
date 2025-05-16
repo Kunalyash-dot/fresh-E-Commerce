@@ -37,9 +37,9 @@ const [showPassword, setShowPassword] = useState(false)
         ...SummaryApi.login,
         data:data
       })
-      console.log(response);
+      //console.log(response);
       if(response.data.error){
-        console.log("Error in fetching login data");
+        //console.log("Error in fetching login data");
         toast.error(response.data.message);
       }
       if(response.data.success){
@@ -48,7 +48,7 @@ const [showPassword, setShowPassword] = useState(false)
         localStorage.setItem('refreshToken',response.data.data.refreshToken)
 
         const userDetails = await fetchUserDetails()
-        console.log(userDetails)
+        //console.log(userDetails)
         dispatch(setUserDetails(userDetails.data))
 
         setData({

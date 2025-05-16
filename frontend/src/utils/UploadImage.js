@@ -10,7 +10,7 @@ const uploadImage = async(image)=>{
             ...SummaryApi.uploadImage,
             data : formData
         })
-console.log(response);
+//console.log(response);
         return response
     } catch (error) {
         return error

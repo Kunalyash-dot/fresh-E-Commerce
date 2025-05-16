@@ -28,7 +28,7 @@ function Address() {
           addressId:id
         }
       })
-      console.log(res)
+      //console.log(res)
       if(res.data.success){
         toast.success("Address Removed")
         if(fetchAddress){

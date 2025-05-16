@@ -31,7 +31,7 @@ function EditSubCategory({close,data,fetchData}) {
     if(!file) return;
 
     const response = await uploadImage(file);
-console.log(response);
+//console.log(response);
     if(response.status === 200){
       setSubCategoryData((prev) => ({
         ...prev,
@@ -56,7 +56,7 @@ const handleSubmitSubCategory = async (e) => {
       ...SummaryApi.updateSubCategory,
       data: subCategoryData,
     });
-    console.log(res)
+    //console.log(res)
     if (res.status === 200) {
      
       toast.success(res.data.message);

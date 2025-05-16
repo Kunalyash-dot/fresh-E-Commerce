@@ -11,7 +11,7 @@ export const addSubCategoryController = async (req, res) => {
         const saveSubCategory = await addSubCategory.save();
         return res.status(200).send({ message: "SubCategory added successfully", success: true, data: saveSubCategory, error: false });
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return res.status(500).send({ message: "Internal server error", error: true, success: false });
     }
 };
@@ -23,7 +23,7 @@ export const getSubCategoryController = async (req, res) => {
         };
         return res.status(200).send({ message: "SubCategory fetched successfully", success: true, data, error: false });
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return res.status(500).send({ message: "Internal server error", error: true, success: false });
     }
 };

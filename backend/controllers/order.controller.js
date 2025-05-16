@@ -69,7 +69,7 @@ export const paymentContoller =async (req,res)=>{
 
 
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return res.status(500).json({
             message:"Internal Sever Error",
             success:false,
@@ -82,7 +82,7 @@ export const paymentVerifyController = async (req,res)=>{
 try {
 
     const userId = req.userId;
-    console.log(`userId payment verification  ${userId}`);
+    //console.log(`userId payment verification  ${userId}`);
     const {razorpay_order_id,razorpay_payment_id,razorpay_signature,list_items,addressId,totalAmt,subTotalAmt} = req.body;
 
     const generatedSignature = crypto.createHmac("sha256", process.env.RAZORPAY_KEY_SECRET).update(`${razorpay_order_id}|${razorpay_payment_id}`).digest("hex");
@@ -112,7 +112,7 @@ try {
 
     const order = await OrderModel.insertMany(payload);
     const checkres=await CartProductModel.deleteMany({userId});
-    console.log(checkres)
+    //console.log(checkres)
     await UserModel.findByIdAndUpdate(userId,{shopping_cart:[],});
 
     return res.json({

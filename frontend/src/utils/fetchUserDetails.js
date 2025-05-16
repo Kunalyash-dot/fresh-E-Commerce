@@ -8,7 +8,7 @@ const fetchUserDetails = async()=>{
         })
         return response.data;
     } catch (error) {
-        console.log(` Error in fetching users : ${error}`)
+        //console.log(` Error in fetching users : ${error}`)
     }
 }
 

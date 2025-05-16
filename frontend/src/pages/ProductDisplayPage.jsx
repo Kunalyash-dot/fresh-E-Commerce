@@ -22,7 +22,7 @@ function ProductDisplayPage() {
   const [image, setImage] = useState(0)
   const [loading, setLoading] = useState(false)
   const imageContainer = useRef()
-console.log(categoryId)
+//console.log(categoryId)
   const fetchProductDetails = async () => {
     try {
       const response = await Axios({
@@ -33,7 +33,7 @@ console.log(categoryId)
       })
 
       const { data: responseData } = response
-console.log(responseData)
+//console.log(responseData)
 
       if (responseData.success) {
         setData(responseData.data)
@@ -56,7 +56,7 @@ console.log(responseData)
   const handleScrollLeft = () => {
     imageContainer.current.scrollLeft -= 100
   }
-  console.log("product data", data)
+  //console.log("product data", data)
   return (
     <>
     <section className='container mx-auto p-4 grid lg:grid-cols-2 '>

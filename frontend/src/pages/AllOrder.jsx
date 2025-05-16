@@ -19,7 +19,7 @@ try {
     console.log(error)
 }
     }
-    console.log(order)
+    //console.log(order)
 
 useEffect(()=>{
     fetchAllOrder()

@@ -22,8 +22,8 @@ function EditCategory({close, fetchData, data:CategoryData}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // console.log("working inside edit category")
-    console.log("Submitted data:", data);
+    // //console.log("working inside edit category")
+    //console.log("Submitted data:", data);
     try {
     
       const res = await Axios({
@@ -35,14 +35,14 @@ function EditCategory({close, fetchData, data:CategoryData}) {
         }
       });
  
-      console.log("response",res)
+      //console.log("response",res)
       if (res.status === 200) {
         toast.success("Category updated successfully");
         fetchData();
         close();
       }
     } catch (error) {
-      console.log(error)
+      //console.log(error)
       AxiosToastError(error);
     } finally {
       setLoading(false);

@@ -108,18 +108,8 @@ const handleSubmit = async(e)=>{
   console.log("data",data);
 
   try {
-    console.log(data)
-    console.log("Submitted Payload", {
-      name: data.name,
-      description: data.description,
-      price: Number(data.price),
-      category: data.category.map(cat => cat._id),
-      subCategory: data.subCategory.map(sub => sub._id),
-      image: data.image,
-      stock: Number(data.stock),
-      discount: Number(data.discount),
-      more_details: data.more_details,
-    });
+   
+   
     const res = await Axios({
       ...SummaryApi.createProduct,
       data:{
@@ -135,7 +125,7 @@ const handleSubmit = async(e)=>{
 
       }
     })
-    console.log(res)
+    // console.log(res)
     const {data: responseData} = res;
     if(responseData.success){
       SuccessAlert(responseData.message);

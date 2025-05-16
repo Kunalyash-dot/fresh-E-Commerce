@@ -34,7 +34,7 @@ function SubCategoryPage() {
     const res = await Axios({
       ...SummaryApi.getSubCategory
     })
-    console.log(res)
+    //console.log(res)
     if (res.status === 200) {
       setData(res.data.data);
       setLoading(false);
@@ -59,7 +59,7 @@ function SubCategoryPage() {
     columnHelper.accessor('image',{
       header:"Image",
       cell: ({row}) => {
-        console.log(row)
+        //console.log(row)
         return (
           <div className='flex justify-center items-center'>
             <img src={row.original.image} alt={row.original.name} className='w-8 h-8 cursor-pointer' onClick={()=>{
@@ -116,7 +116,7 @@ function SubCategoryPage() {
       ...SummaryApi.deleteSubCategory,
       data:deleteSubCategory
     })
-    console.log(res)
+    //console.log(res)
     if (res.data.success) {
       toast.success(res.data.message);
       setOpenDeleteConfirmBox(false);

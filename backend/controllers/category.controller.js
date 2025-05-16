@@ -4,7 +4,7 @@ import ProductModel from "../models/product.model.js";
 export const addCatrgoryController =async (req, res) => {
     try {
         const {name,image} = req.body;
-        console.log(req.body)
+        //console.log(req.body)
         if(!name || !image) {
             return res.status(400).json({message: "All fields are required",error:true,success:false});
         }
@@ -15,7 +15,7 @@ export const addCatrgoryController =async (req, res) => {
         }
         return res.status(200).json({message: "Category added successfully",success:true,data:saveCategory,error:false});
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return res.status(500).json({message: "Internal server error",error:true,success:false});
     }
 }
@@ -27,32 +27,32 @@ try {
     }
     return res.status(200).json({message: "Category fetched successfully",success:true,data,error:false});
 } catch (error) {
-    console.log(error);
+    //console.log(error);
     return res.status(500).json({message: "Internal server error",error:true,success:false});
 }
 }
 export const updateCategoryController =async (req, res) => {
     try {
-        console.log("inside update category")
+        //console.log("inside update category")
         const {_id, name, image} = req.body;
         if(!_id || !name || !image) {
             return res.status(400).json({message: "All fields are required",error:true,success:false});
         }
-        console.log(req.body)
+        //console.log(req.body)
         const update = await CategoryModel.updateOne({_id:_id},{name,image});
         if(!update) {
             return res.status(500).json({message: "Failed to update category",error:true,success:false});
         }
         return res.status(200).json({message: "Category updated successfully",success:true,data:update,error:false});
     } catch (error) {
-        console.log("error",error)
+        //console.log("error",error)
         return res.status(500).json({message: "Internal server error",error:true,success:false});
     }
 }
 export const deleteCategoryController =async (req, res) => {
     try {
-        console.log("delete category")
-        console.log(req.body)
+        //console.log("delete category")
+        //console.log(req.body)
         const {_id} = req.body;
         if(!_id) {
             return res.status(400).json({message: "Category id is required",error:true,success:false});
@@ -70,7 +70,7 @@ export const deleteCategoryController =async (req, res) => {
         const deleteCategory = await CategoryModel.deleteOne({_id:_id});
         return res.status(200).json({message: "Category deleted successfully",success:true,data:deleteCategory,error:false});
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return res.status(500).json({message: "Internal server error",error:true,success:false});
     }
 }

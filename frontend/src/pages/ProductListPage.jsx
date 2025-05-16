@@ -36,7 +36,7 @@ function ProductListPage() {
           limit: 20,
         }
       })
-console.log(response)
+//console.log(response)
       const { data: responseData } = response
 
       if (responseData.success) {

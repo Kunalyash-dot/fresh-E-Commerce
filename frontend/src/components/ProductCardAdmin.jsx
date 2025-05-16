@@ -25,7 +25,7 @@ function ProductCardAdmin({ data, fetchProductData}) {
         })
   
         const { data : responseData } = response
-  console.log(responseData)
+  //console.log(responseData)
         if(responseData.success){
             toast.success(responseData.message)
             if(fetchProductData){

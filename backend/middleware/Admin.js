@@ -9,7 +9,7 @@ export const admin =async (req, res, next) => {
     }
     next();
 } catch (error) {
-    console.log("In Admin middileware",error)
+    //console.log("In Admin middileware",error)
     return res.status(500).json({message: 'Internal server error',error:true,success:false});
 }
 }

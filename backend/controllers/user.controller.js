@@ -31,7 +31,7 @@ export const registerUserController = async (req, res) => {
             password: hashedPassword,
             mobile
         });
-        // console.log(user);
+        // //console.log(user);
         if (!user) {
             return res.status(400).json({ message: "User not created",error : true,success : false });
         }
@@ -50,7 +50,7 @@ export const registerUserController = async (req, res) => {
     //       errors // returns an array of error messages
     //     });
     //   }
-        console.log(`error in registerUserController : ${error}`);
+        //console.log(`error in registerUserController : ${error}`);
         res.status(500).json({ message: "Internal server error",error : true,success : false });
     }
    
@@ -94,7 +94,7 @@ export const loginUserController = async (req, res) => {
             }
         })
     } catch (error) {
-        console.log(`error in loginUserController : ${error}`);
+        //console.log(`error in loginUserController : ${error}`);
         res.status(500).json({ message: "Internal server error",error : true,success : false });
     }
 }
@@ -102,7 +102,7 @@ export const loginUserController = async (req, res) => {
 export const logoutUserController = async (req, res) => {
     try {
        const userId = req.userId
-       console.log(userId);
+       //console.log(userId);
         if (!userId) {
             return res.status(400).json({ message: "User not found",error : true,success : false });
         }
@@ -122,7 +122,7 @@ export const logoutUserController = async (req, res) => {
         res.clearCookie('refreshToken',cookiesOption)
         return res.status(200).json({ message: "Logout successfully",error : false,success : true });
     } catch (error) {
-        console.log(`error in logoutUserController : ${error}`);
+        //console.log(`error in logoutUserController : ${error}`);
         res.status(500).json({ message: "Internal server error",error : true,success : false });
     }
 }
@@ -131,21 +131,21 @@ export const refreshTokenController = async (req, res) => {}
 
 export const userDetailsController = async (req, res) => {
     try {
-        console.log("user details controller");
+        //console.log("user details controller");
         const userId = req.userId
-        console.log(userId);
+        //console.log(userId);
         if (!userId) {
             return res.status(400).json({ message: "User not found",error : true,success : false });
         }
         const user = await UserModel.findById(userId);
-        console.log(user);
+        //console.log(user);
         if (!user) {
             return res.status(400).json({ message: "User not found",error : true,success : false });
         }
         const { password: _, ...userData } = user._doc;
         return res.status(200).json({ data: userData, success : true,error : false });
     } catch (error) {
-        console.log(`error in userDetailsController : ${error}`);
+        //console.log(`error in userDetailsController : ${error}`);
         res.status(500).json({ message: "Internal server error",error : true,success : false });
     }
 }
@@ -179,7 +179,7 @@ export const updateUserController = async (req, res) => {
         const { password: _, ...userData } = user._doc;
         return res.status(200).json({ user: userData, success : true,error : false });
     } catch (error) {
-        console.log(`error in updateUserController : ${error}`);
+        //console.log(`error in updateUserController : ${error}`);
         res.status(500).json({ message: "Internal server error",error : true,success : false });
     }
 }
@@ -204,7 +204,7 @@ export const updateAvatarController = async (req, res) => {
 return res.status(200).json({ message: "Avatar updated successfully",error : false,success : true ,data:{_id : userId,avatar : upload.url}});
 
     } catch (error) {
-        console.log(`error in updateAvatarController : ${error}`);
+        //console.log(`error in updateAvatarController : ${error}`);
         res.status(500).json({ message: "Internal server error",error : true,success : false });
        
     }

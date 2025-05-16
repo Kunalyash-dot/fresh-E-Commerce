@@ -11,7 +11,7 @@ function AddAddress({close}) {
     const {register,handleSubmit,reset} = useForm();
     const {fetchAddress} = useGlobalContext();
     const onSubmit = async(data)=>{
-        console.log("Address Data",data);
+        //console.log("Address Data",data);
         try {
             const res = await Axios({
                 ...SummaryApi.createAddress,

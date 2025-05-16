@@ -27,7 +27,7 @@ function SearchPage() {
           page:page
         }
       })
-      console.log(response)
+      //console.log(response)
        const { data : responseData } = response
 
         if(responseData.success){
@@ -42,10 +42,10 @@ function SearchPage() {
               })
             }
             setTotalPage(responseData.totalPage)
-            console.log(responseData)
+            //console.log(responseData)
           }
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     // AxiosToastError(error)
     }finally{
       setLoading(false)
@@ -55,7 +55,7 @@ function SearchPage() {
     fetchData()
   },[page,searchText])
 
-  console.log("page",page)
+  //console.log("page",page)
 
   const handleFetchMore = ()=>{
     if(totalPage > page){

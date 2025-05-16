@@ -51,17 +51,17 @@ export const updateCartItemQtyController = async (req, res) => {
 
 }
 export const removeCartItemQtyController = async (req, res) => {
-    console.log("working")
+    //console.log("working")
     try {
         const userId = req.userId;
         const { productId } = req.body;
-        console.log("ProductId", productId );
+        //console.log("ProductId", productId );
 
         if (!productId) {
             return res.status(400).json({ message: 'Product ID is required', error: true, success: false });
         }
         const cartItem = await CartProductModel.findOne({ _id: productId, userId });
-        console.log("cart Item", cartItem);
+        //console.log("cart Item", cartItem);
         if (!cartItem) {
             return res.status(404).json({ message: 'Cart item not found', error: true, success: false });
         }

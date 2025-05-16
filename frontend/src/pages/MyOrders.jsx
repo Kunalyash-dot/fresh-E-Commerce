@@ -5,7 +5,7 @@ import NoData from '../components/NoData'
 
 function MyOrders() {
     const orders = useSelector(state => state.orders.order)
-    console.log(orders);
+    //console.log(orders);
   return (
    <div>
       <div className='bg-white shadow-md p-3 font-semibold'>

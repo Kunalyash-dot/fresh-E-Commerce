@@ -30,7 +30,7 @@ export const addAddressController = async (req, res) => {
         });
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         return res.status(500).json({
             success: false,
             error: true,
@@ -98,9 +98,9 @@ export const updateAddressController = async (req, res) => {
 export const deleteAddressController = async (req, res) => {
     try {
         const userId = req.userId;
-        console.log("User Id in delete Address ",userId)
+        //console.log("User Id in delete Address ",userId)
         const { addressId } = req.body;
-        console.log("Address Id ",addressId)
+        //console.log("Address Id ",addressId)
         const disableAddress = await AddressModel.deleteOne({ _id: addressId, user: userId });
         return res.status(200).json({
             success: true,
